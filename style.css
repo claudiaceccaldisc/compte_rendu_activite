@@ -1,50 +1,105 @@
 body {
   font-family: "Segoe UI", Roboto, Arial, sans-serif;
-  background-color: #f6f8fa;
-  color: #1a1a1a;
+  background-color: #f8fafc;
+  color: #222;
   margin: 0;
   padding: 0;
 }
 
 header {
-  background-color: #0a3d62;
-  color: #fff;
-  padding: 1.5rem 2rem;
+  background-color: #003366;
+  color: white;
+  padding: 1.2rem 2rem;
   text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
 main {
-  padding: 2rem;
   max-width: 900px;
-  margin: auto;
+  margin: 2rem auto;
+  padding: 0 1rem;
 }
 
-.card {
-  background: white;
-  padding: 1rem 1.5rem;
-  border-radius: 12px;
+h1, h2 {
+  font-weight: 600;
+  color: #003366;
+}
+
+h2 {
+  border-bottom: 2px solid #003366;
+  padding-bottom: 0.4rem;
   margin-bottom: 1rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-top: 1rem;
+  color: #333;
+}
+
+input, select, textarea {
+  width: 100%;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  box-sizing: border-box;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #0055aa;
+  box-shadow: 0 0 3px rgba(0,85,170,0.3);
+}
+
+textarea {
+  height: 100px;
+  resize: vertical;
 }
 
 button {
-  background-color: #0a3d62;
+  margin-top: 1.5rem;
+  background-color: #0055aa;
   color: white;
   border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
+  padding: 0.7rem 1.2rem;
+  border-radius: 4px;
   cursor: pointer;
-  margin-right: 8px;
+  font-size: 1rem;
 }
 
 button:hover {
-  background-color: #1e6091;
+  background-color: #003e7e;
 }
+
 footer {
   text-align: center;
   padding: 1rem;
-  color: #888;
+  color: #777;
   font-size: 0.9rem;
+  border-top: 1px solid #ddd;
+  margin-top: 2rem;
 }
 
+ul.fiches {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul.fiches li {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul.fiches li strong {
+  color: #003366;
+}
+
+ul.fiches li small {
+  color: #666;
+}
