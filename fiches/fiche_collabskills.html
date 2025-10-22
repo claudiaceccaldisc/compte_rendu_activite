@@ -1,115 +1,179 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fiche – Application Collabskills</title>
-  <link rel="stylesheet" href="../assets/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fiche Projet – CollabSkills | CAF du Lot-et-Garonne</title>
+
+  <style>
+    /* === STYLE GLOBAL === */
+    :root {
+      --primary: #005bbb;
+      --secondary: #f1f5f9;
+      --accent: #0069d9;
+      --text-dark: #2c3e50;
+      --text-light: #7f8c8d;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      background: var(--secondary);
+      margin: 0;
+      padding: 30px;
+      color: var(--text-dark);
+    }
+
+    .container {
+      background: #fff;
+      max-width: 900px;
+      margin: auto;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--primary);
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      border-left: 6px solid var(--primary);
+      padding-left: 10px;
+      color: var(--primary);
+      margin-top: 40px;
+      margin-bottom: 15px;
+    }
+
+    h3 {
+      color: var(--text-dark);
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+
+    p, li {
+      font-size: 1em;
+      line-height: 1.6;
+    }
+
+    ul {
+      margin: 10px 0 20px 30px;
+    }
+
+    .btn-container {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      color: #fff;
+      background: var(--primary);
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    .btn:hover {
+      background: var(--accent);
+    }
+
+    .highlight {
+      background: #eef6ff;
+      border-left: 4px solid var(--primary);
+      padding: 10px 15px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 0.9em;
+      color: var(--text-light);
+    }
+
+    @media print {
+      .btn-container { display: none; }
+      body { background: #fff; }
+      .container { box-shadow: none; border: none; }
+    }
+  </style>
 </head>
+
 <body>
   <div class="container">
-    <div class="action-buttons">
-      <button class="btn btn-primary" onclick="window.print()">🖨️ Imprimer / Exporter PDF</button>
-      <button class="btn btn-secondary" onclick="toggleTOC()">📑 Table des matières</button>
+    <div class="btn-container">
+      <button class="btn" onclick="window.print()">🖨️ Imprimer / Exporter PDF</button>
     </div>
 
-    <div class="toc" id="toc" style="display: none;">
-      <h3>Table des matières</h3>
-      <div id="toc-content"></div>
+    <h1>Fiche Projet – CollabSkills</h1>
+    <p style="text-align:center; font-weight:500;">
+      Service <strong>DEFI – CAF du Lot-et-Garonne</strong> | Développeur Full Stack – Claudia Ceccaldi
+    </p>
+
+    <div class="highlight">
+      <p><strong>Résumé du projet :</strong> CollabSkills est une application interne permettant la création de projets collaboratifs
+      et la mise en relation automatique des agents de la CAF selon leurs compétences déclarées. Elle vise à fluidifier la
+      collaboration interservices et à valoriser les savoir-faire internes.</p>
     </div>
 
-    <div id="content">
-      <h1>💼 Projet : Application <strong>Collabskills</strong></h1>
-      <p><strong>Auteur :</strong> Claudia Ceccaldi – LP DWCA 2024/2025</p>
-      <p><strong>Service :</strong> DEFI – CAF du Var</p>
+    <h2>🎯 Objectifs du projet</h2>
+    <ul>
+      <li>Faciliter la constitution d’équipes pluridisciplinaires.</li>
+      <li>Centraliser et valoriser les compétences internes des agents.</li>
+      <li>Réduire le temps de recherche et d’affectation sur projet.</li>
+      <li>Améliorer la communication et la visibilité entre services.</li>
+    </ul>
 
-      <h2>📋 Constat</h2>
-      <p>
-        Avant Collabskills, la constitution d’équipes pour les projets internes se faisait
-        principalement par e-mails ou bouche-à-oreille. Cela engendrait une perte de temps,
-        des doublons et une sous-utilisation des expertises internes.
-      </p>
+    <h2>⚙️ Fonctionnalités principales</h2>
+    <ul>
+      <li>Création et gestion de projets collaboratifs.</li>
+      <li>Profil personnel avec déclaration des compétences.</li>
+      <li>Système de matching automatique compétences ↔ projets.</li>
+      <li>Gestion des rôles utilisateurs (agent, chef de projet, admin).</li>
+      <li>Envoi d’emails automatiques (PHPMailer).</li>
+      <li>Dashboard dynamique et statistiques.</li>
+    </ul>
 
-      <h2>🎯 Objectifs</h2>
-      <ul>
-        <li>Centraliser l’ensemble des compétences internes dans un seul outil</li>
-        <li>Faciliter la mise en relation entre agents et projets</li>
-        <li>Réduire les délais de constitution d’équipe</li>
-        <li>Valoriser les savoir-faire et parcours professionnels internes</li>
-      </ul>
+    <h2>📁 Section A – Ce qui a été fait</h2>
+    <ul>
+      <li>Analyse du besoin et conception de la base de données MySQL.</li>
+      <li>Création du backend PHP (POO, PDO, sécurité, routage léger).</li>
+      <li>Développement du frontend en HTML/CSS/Bootstrap 5.</li>
+      <li>Intégration du système de matching basé sur les compétences.</li>
+      <li>Mise en place d’un module d’authentification et gestion des sessions.</li>
+      <li>Configuration de PHPMailer pour les notifications automatiques.</li>
+      <li>Rédaction d’un fichier `.env` sécurisé via Dotenv pour la configuration.</li>
+    </ul>
 
-      <h2>🧩 Présentation de l’outil</h2>
-      <p>
-        <strong>Collabskills</strong> est une application web interne de gestion collaborative par compétences.
-        L’outil repose sur un moteur de correspondance automatique entre les profils des agents et les besoins
-        des projets. Son interface est intuitive, responsive et sécurisée.
-      </p>
+    <h2>🧠 Section B – Compétences sollicitées</h2>
+    <ul>
+      <li><strong>Langages :</strong> PHP 8, HTML5, CSS3, JavaScript ES6, SQL.</li>
+      <li><strong>Frameworks / outils :</strong> Bootstrap 5, Font Awesome, Composer, PDO, PHPMailer, Dotenv.</li>
+      <li><strong>Base de données :</strong> MySQL (conception, requêtes, optimisation).</li>
+      <li><strong>Concepts appliqués :</strong> Programmation orientée objet, architecture MVC simplifiée, sécurisation de formulaires, gestion des dépendances, UX/UI responsive.</li>
+      <li><strong>Compétences transversales :</strong> autonomie, documentation, test utilisateur, communication interservice.</li>
+    </ul>
 
-      <h2>⚙️ Fonctionnalités principales</h2>
-      <ul>
-        <li>Gestion des comptes et rôles utilisateurs (agent / chef de projet / administrateur)</li>
-        <li>Déclaration et modification des compétences via un formulaire interactif</li>
-        <li>Création, suivi et archivage de projets internes</li>
-        <li>Matching automatique entre projets et compétences</li>
-        <li>Tableau de bord personnalisé selon le rôle</li>
-        <li>Recommandations bidirectionnelles (agents ↔ projets)</li>
-      </ul>
+    <h2>🏢 Section C – Valeur ajoutée pour la CAF du Lot-et-Garonne</h2>
+    <ul>
+      <li>Optimisation du temps de gestion des projets internes.</li>
+      <li>Amélioration de la visibilité des talents au sein de l’organisme.</li>
+      <li>Renforcement de la transversalité et de la collaboration entre services.</li>
+      <li>Valorisation de la marque employeur grâce à un outil innovant interne.</li>
+      <li>Base réutilisable pour d’autres applications internes (mobilité, formations).</li>
+    </ul>
 
-      <h3>🧭 Architecture simplifiée</h3>
-      <pre class="mermaid">
-graph TD
-  A["👤 Utilisateur (Agent / Chef de projet)"] --> B["🌐 Interface Web (React)"]
-  B --> C["🔌 API (Node.js / Express)"]
-  C --> D["🗄️ Base de Données (PostgreSQL)"]
-  C --> E["🤝 Module de Matching (Python + algorithme de similarité)"]
-  E --> D
-  C --> F["🔐 Authentification (JWT / LDAP)"]
-  B --> F
-
-  style A fill:#bbdefb,stroke:#1565c0,stroke-width:2px
-  style B fill:#c8e6c9,stroke:#2e7d32,stroke-width:2px
-  style C fill:#a5d6a7,stroke:#1b5e20,stroke-width:2px
-  style D fill:#fff3e0,stroke:#e65100,stroke-width:2px
-  style E fill:#e1bee7,stroke:#6a1b9a,stroke-width:2px
-  style F fill:#ffcc80,stroke:#ef6c00,stroke-width:2px
-      </pre>
-
-      <h2>🚀 Déploiement</h2>
-      <p>
-        Le projet est actuellement en phase de finalisation. L’intégration dans l’infrastructure existante
-        de la CAF est prévue progressivement afin de favoriser l’adoption utilisateur.
-      </p>
-
-      <ul>
-        <li>Phase pilote : tests internes auprès d’un panel d’agents</li>
-        <li>Déploiement progressif par département / service</li>
-        <li>Formation et accompagnement à l’utilisation</li>
-      </ul>
-
-      <h2>📊 Résultats attendus</h2>
-      <ul>
-        <li>Réduction significative du temps d’identification des bons profils</li>
-        <li>Valorisation des compétences internes souvent méconnues</li>
-        <li>Meilleure collaboration interservices</li>
-        <li>Suivi clair et traçabilité des projets transverses</li>
-      </ul>
-
-      <h2>🌱 Perspectives</h2>
-      <ul>
-        <li>Amélioration continue de l’ergonomie et de l’expérience utilisateur</li>
-        <li>Personnalisation des tableaux de bord</li>
-        <li>Extension du moteur de recommandation (IA / NLP)</li>
-        <li>Ajout de fonctionnalités de messagerie interne et notifications</li>
-      </ul>
-
-      <blockquote>
-        <strong>En conclusion :</strong>  
-        Collabskills incarne la volonté de la CAF de valoriser ses talents, fluidifier la
-        collaboration et moderniser la gestion des projets internes.
-      </blockquote>
-    </div>
+    <footer>
+      © 2025 – Service DEFI, CAF du Lot-et-Garonne | Fiche projet automatisée – CollabSkills
+    </footer>
   </div>
-
-  <script type="module" src="../scripts/mermaid-init.js"></script>
 </body>
 </html>
