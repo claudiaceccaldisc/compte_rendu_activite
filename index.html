@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio Professionnel – Service DEFI (CAF)</title>
+  <title>Portfolio Professionnel – CAF</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,40 +13,36 @@
   </header>
 
   <main>
-    <h2>🔍 Fiches d’actions</h2>
-    <p>Consultez, imprimez ou créez une nouvelle fiche professionnelle.</p>
+    <h2>📂 Fiches d’actions</h2>
+    <ul class="fiches" id="fiches"></ul>
 
-    <div id="fiches"></div>
-
-    <div class="card" style="text-align:center; margin-top:2rem;">
-      <h3>➕ Créer une nouvelle fiche</h3>
-      <p>
-        <button onclick="window.location.href='formulaire.html'">🧾 Remplir une nouvelle fiche</button>
-      </p>
+    <div style="margin-top:2rem;">
+      <button onclick="window.location.href='formulaire.html'">🧾 Créer une nouvelle fiche</button>
     </div>
   </main>
 
   <footer>
-    <p>Service DEFI – CAF | Portfolio automatisé © 2025</p>
+    <p>Service DEFI – CAF | Portfolio professionnel automatisé © 2025</p>
   </footer>
 
   <script>
     async function chargerFiches() {
-      const container = document.getElementById("fiches");
-      const response = await fetch("data/fiches.json");
-      const fiches = await response.json();
+      const list = document.getElementById("fiches");
+      const r = await fetch("data/fiches.json");
+      const fiches = await r.json();
+      list.innerHTML = "";
 
       fiches.forEach(f => {
-        const card = document.createElement("div");
-        card.className = "card";
-        card.innerHTML = `
-          <h3>${f.titre}</h3>
-          <p><strong>Période :</strong> ${f.periode} | <strong>Type :</strong> ${f.type}</p>
-          <button onclick="window.open('${f.lien}', '_blank')">📄 Lire</button>
-          <button onclick="window.open('https://raw.githubusercontent.com/${f.repo}/main/${f.lien}', '_blank')">⬇️ Télécharger</button>
-          <button onclick="window.print()">🖨️ Imprimer</button>
-        `;
-        container.appendChild(card);
+        const li = document.createElement("li");
+        li.innerHTML = `
+          <div>
+            <strong>${f.titre}</strong><br>
+            <small>${f.periode} — ${f.type}</small>
+          </div>
+          <div>
+            <a href="${f.lien}" target="_blank">📄 Lire</a>
+          </div>`;
+        list.appendChild(li);
       });
     }
     chargerFiches();
