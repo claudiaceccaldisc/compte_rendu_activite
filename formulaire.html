@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nouvelle Fiche – Portfolio Professionnel</title>
+  <title>Créer une Fiche – Portfolio Professionnel</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -12,12 +12,14 @@
   </header>
 
   <main>
+    <p>Remplis les champs ci-dessous pour générer ta fiche professionnelle au format Markdown. Une fois téléchargée, place-la dans ton dossier <code>/fiches-actions</code>.</p>
+
     <form id="ficheForm">
       <label>Nom / Prénom :</label>
-      <input type="text" id="nom" placeholder="Ton nom complet" required>
+      <input type="text" id="nom" placeholder="Ex : Jean Dupont" required>
 
       <label>Titre du projet :</label>
-      <input type="text" id="titre" placeholder="Ex : Application de covoiturage" required>
+      <input type="text" id="titre" placeholder="Ex : Application de covoiturage professionnel" required>
 
       <label>Période :</label>
       <input type="text" id="periode" placeholder="Ex : Janv. 2025 – Mars 2025" required>
@@ -32,26 +34,26 @@
       </select>
 
       <label>Contexte / Objectif :</label>
-      <textarea id="contexte"></textarea>
+      <textarea id="contexte" placeholder="Décris la situation initiale, le besoin et la finalité..."></textarea>
 
       <label>Actions réalisées :</label>
-      <textarea id="actions"></textarea>
+      <textarea id="actions" placeholder="Liste les principales étapes ou tâches effectuées..."></textarea>
 
       <label>Compétences mobilisées :</label>
-      <textarea id="competences"></textarea>
+      <textarea id="competences" placeholder="Langages, outils, méthodes, savoir-être..."></textarea>
 
       <label>Impact / Valeur ajoutée :</label>
-      <textarea id="impact"></textarea>
+      <textarea id="impact" placeholder="Gains pour le service, l’entreprise, les utilisateurs..."></textarea>
 
       <label>Perspectives / Analyse personnelle :</label>
-      <textarea id="perspectives"></textarea>
+      <textarea id="perspectives" placeholder="Ce que tu as appris, pistes d’amélioration..."></textarea>
 
       <button type="button" onclick="genererMarkdown()">📄 Générer et Télécharger la fiche</button>
     </form>
   </main>
 
   <footer>
-    <p>Service DEFI – CAF | Création automatique de fiches © 2025</p>
+    <p>Service DEFI – CAF | Génération automatique de fiches © 2025</p>
   </footer>
 
   <script>
@@ -104,7 +106,7 @@ ${d("perspectives")}
       a.download = `${d("titre").replace(/\s+/g, "_")}.md`;
       a.click();
 
-      alert("✅ Fiche téléchargée ! Glisse-la dans ton dossier /fiches-actions/ puis ajoute-la à fiches.json.");
+      alert("✅ Fiche générée et téléchargée avec succès !");
     }
   </script>
 </body>
