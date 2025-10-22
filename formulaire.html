@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nouvelle Fiche – Portfolio Professionnel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🧾 Créer une Fiche Professionnelle</h1>
+  </header>
+
+  <main>
+    <form id="ficheForm">
+      <label>Nom / Prénom :</label>
+      <input type="text" id="nom" placeholder="Ton nom complet" required>
+
+      <label>Titre du projet :</label>
+      <input type="text" id="titre" placeholder="Ex : Application de covoiturage" required>
+
+      <label>Période :</label>
+      <input type="text" id="periode" placeholder="Ex : Janv. 2025 – Mars 2025" required>
+
+      <label>Type d’action :</label>
+      <select id="type">
+        <option value="Développement">Développement</option>
+        <option value="Support">Support</option>
+        <option value="Amélioration">Amélioration</option>
+        <option value="Documentation">Documentation</option>
+        <option value="Collaboration">Collaboration</option>
+      </select>
+
+      <label>Contexte / Objectif :</label>
+      <textarea id="contexte"></textarea>
+
+      <label>Actions réalisées :</label>
+      <textarea id="actions"></textarea>
+
+      <label>Compétences mobilisées :</label>
+      <textarea id="competences"></textarea>
+
+      <label>Impact / Valeur ajoutée :</label>
+      <textarea id="impact"></textarea>
+
+      <label>Perspectives / Analyse personnelle :</label>
+      <textarea id="perspectives"></textarea>
+
+      <button type="button" onclick="genererMarkdown()">📄 Générer et Télécharger la fiche</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>Service DEFI – CAF | Création automatique de fiches © 2025</p>
+  </footer>
+
+  <script>
+    function genererMarkdown() {
+      const d = id => document.getElementById(id).value.trim();
+      const md = `
+# 🧾 FICHE D’ACTION PROFESSIONNELLE  
+**${d("nom")} – Mastère Développeur Full Stack (Service DEFI – CAF)**  
+
+---
+
+## 🏷️ Informations générales
+- **Titre du projet :** ${d("titre")}  
+- **Période :** ${d("periode")}  
+- **Type d’action :** ${d("type")}  
+
+---
+
+## 🎯 Contexte et Objectif  
+${d("contexte")}
+
+---
+
+## 🧩 Actions principales  
+${d("actions")}
+
+---
+
+## 🧠 Compétences mobilisées  
+${d("competences")}
+
+---
+
+## 💡 Impact et Valeur ajoutée  
+${d("impact")}
+
+---
+
+## 🌱 Perspectives et Analyse personnelle  
+${d("perspectives")}
+
+---
+
+🗓️ _Fiche générée automatiquement le ${new Date().toLocaleDateString()}_
+`;
+
+      const blob = new Blob([md], { type: "text/markdown" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = `${d("titre").replace(/\s+/g, "_")}.md`;
+      a.click();
+
+      alert("✅ Fiche téléchargée ! Glisse-la dans ton dossier /fiches-actions/ puis ajoute-la à fiches.json.");
+    }
+  </script>
+</body>
+</html>
