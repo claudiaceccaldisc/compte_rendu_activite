@@ -117,10 +117,3 @@
 
 ---
 
-> 🟦 **Conseil d’utilisation :**  
-> - Duplique ce fichier dans le dossier `/fiches-actions/` à chaque nouvelle mission.  
-> - Renomme-le (ex : `Fiche_03_Support_Utilisateurs.md`).  
-> - Clique sur ✏️ dans GitHub pour le remplir directement via ton navigateur.  
-> - Clique sur **Commit changes** pour sauvegarder.  
-> - La fiche apparaîtra ensuite sur ton site (index.html) et pourra être imprimée ou téléchargée.
-
