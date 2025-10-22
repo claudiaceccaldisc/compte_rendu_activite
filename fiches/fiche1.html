@@ -1,1 +1,40 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fiche - Projet A CAF</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="action-buttons">
+      <button class="btn btn-primary" onclick="window.print()">🖨️ Imprimer / Exporter PDF</button>
+      <button class="btn btn-secondary" onclick="toggleTOC()">📑 Table des matières</button>
+    </div>
+
+    <div class="toc" id="toc" style="display: none;">
+      <h3>Table des matières</h3>
+      <div id="toc-content"></div>
+    </div>
+
+    <div id="content">
+      <!-- Ici tu mets ta fiche complète : texte, tableaux, images, code, diagrammes Mermaid -->
+      <h1>💼 Projet : Optimisation des Processus CAF</h1>
+      <h2>Objectif</h2>
+      <p>Améliorer la gestion des tickets dans l’outil interne de la CAF...</p>
+
+      <pre class="mermaid">
+graph TD
+  Utilisateur -->|Remplit formulaire| Application
+  Application -->|Enregistre| BaseDeDonnées
+  BaseDeDonnées -->|Renvoie confirmation| Application
+  Application -->|Affiche| Utilisateur
+      </pre>
+    </div>
+  </div>
+
+  <script type="module" src="../scripts/mermaid-init.js"></script>
+</body>
+</html>
