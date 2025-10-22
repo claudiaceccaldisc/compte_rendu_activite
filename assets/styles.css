@@ -1,1 +1,190 @@
+/* =========================================
+   🎨 STYLE GLOBAL – CAF du Lot-et-Garonne
+   Auteur : Claudia Ceccaldi
+   Service : DEFI
+   ========================================= */
+
+/* === VARIABLES DE COULEURS === */
+:root {
+  --primary: #005bbb;      /* Bleu CAF institutionnel */
+  --secondary: #f1f5f9;    /* Fond clair */
+  --accent: #0069d9;       /* Bleu survol / action */
+  --text-dark: #2c3e50;    /* Texte principal */
+  --text-light: #7f8c8d;   /* Texte secondaire */
+}
+
+/* === STYLE GLOBAL === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  background: var(--secondary);
+  color: var(--text-dark);
+  margin: 0;
+  padding: 30px;
+  line-height: 1.6;
+}
+
+/* === CONTENEUR PRINCIPAL === */
+.container {
+  background: #fff;
+  max-width: 900px;
+  margin: auto;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* === TITRES === */
+h1 {
+  color: var(--primary);
+  font-size: 2em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+h2 {
+  color: var(--primary);
+  border-left: 6px solid var(--primary);
+  padding-left: 10px;
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
+
+h3 {
+  color: var(--text-dark);
+  margin-top: 20px;
+  font-size: 1.2em;
+}
+
+/* === PARAGRAPHES ET LISTES === */
+p, li {
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+ul {
+  margin: 10px 0 20px 30px;
+}
+
+/* === BOUTONS === */
+.btn, button {
+  display: inline-block;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  background: var(--primary);
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.2s;
+  text-decoration: none;
+}
+
+.btn:hover, button:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* Conteneur de boutons */
+.btn-container, .action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* === BLOCS SPÉCIAUX === */
+.highlight {
+  background: #eef6ff;
+  border-left: 4px solid var(--primary);
+  padding: 12px 18px;
+  margin-bottom: 25px;
+  border-radius: 6px;
+}
+
+/* === LISTE DE FICHES (Page d'accueil) === */
+.fiche-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.fiche-list li {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-left: 6px solid var(--primary);
+  padding: 15px 20px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.fiche-list li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.fiche-list a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+.fiche-list a:hover {
+  text-decoration: underline;
+}
+
+.fiche-meta {
+  color: var(--text-light);
+  font-size: 0.9em;
+}
+
+/* === PIED DE PAGE === */
+footer {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 0.9em;
+  color: var(--text-light);
+}
+
+/* === IMPRESSION (PDF) === */
+@media print {
+  .btn, .btn-container, .action-buttons {
+    display: none;
+  }
+  body {
+    background: #fff;
+    padding: 0;
+  }
+  .container {
+    box-shadow: none;
+    border: none;
+  }
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 600px) {
+  body {
+    padding: 20px;
+  }
+  .container {
+    padding: 25px;
+  }
+  .fiche-list li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .fiche-list a.btn {
+    margin-top: 8px;
+  }
+}
 
