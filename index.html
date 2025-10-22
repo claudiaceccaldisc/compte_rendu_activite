@@ -1,23 +1,180 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Compte Rendu d'activités - CAF47 - Claudia CECCALDI</title>
-  <link rel="stylesheet" href="assets/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portefeuille de Fiches Projets | CAF du Lot-et-Garonne</title>
+
+  <style>
+    /* === STYLE GLOBAL === */
+    :root {
+      --primary: #005bbb;
+      --secondary: #f1f5f9;
+      --accent: #0069d9;
+      --text-dark: #2c3e50;
+      --text-light: #7f8c8d;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      background: var(--secondary);
+      margin: 0;
+      padding: 30px;
+      color: var(--text-dark);
+    }
+
+    .container {
+      background: #fff;
+      max-width: 900px;
+      margin: auto;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      color: var(--primary);
+      font-size: 2em;
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      color: var(--text-dark);
+      font-weight: normal;
+      font-size: 1.2em;
+      margin-bottom: 15px;
+    }
+
+    .intro {
+      background: #eef6ff;
+      border-left: 4px solid var(--primary);
+      padding: 15px 20px;
+      border-radius: 6px;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      color: #fff;
+      background: var(--primary);
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.2s;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background: var(--accent);
+    }
+
+    /* Liste des fiches */
+    .fiche-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .fiche-list li {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-left: 6px solid var(--primary);
+      padding: 15px 20px;
+      margin-bottom: 12px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .fiche-list li:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .fiche-list a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1em;
+    }
+
+    .fiche-list a:hover {
+      text-decoration: underline;
+    }
+
+    .fiche-meta {
+      color: var(--text-light);
+      font-size: 0.9em;
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 0.9em;
+      color: var(--text-light);
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 20px; }
+      .container { padding: 25px; }
+    }
+  </style>
 </head>
+
 <body>
   <div class="container">
-    <h1>📘 Compte Rendu Activités</h1>
-    <h1>Claudia CECCALDI</h1>
-    <h1>Service : DEFI</h1>
-    <h2>Liste des Fiches d’Activités</h2>
-    <ul>
-      <li><a href="fiches/fiche_collabskills.html">🧩 Fiche 1 – Application Collabskills</a></li>
-      <li><a href="fiches/fiche2.html">💡 Fiche 2 – Déploiement FED(API Safir incluse)</a></li>
-      <li><a href="fiches/fiche3.html">📊 Fiche 3 – en attente ...</a></li>
+    <header>
+      <h1>Portefeuille de Fiches Projets</h1>
+      <h2>CAF du Lot-et-Garonne – Service DEFI</h2>
+      <p><strong>Réalisé par :</strong> Claudia Ceccaldi – Mastère Développeur Full Stack</p>
+    </header>
+
+    <div class="intro">
+      <p>Ce portail regroupe l’ensemble des projets réalisés au sein du service <strong>DEFI</strong> de la <strong>CAF du Lot-et-Garonne</strong> dans le cadre du mastère de développement Full Stack.</p>
+      <p>Chaque fiche décrit un projet, ses objectifs, les compétences mobilisées et les bénéfices apportés à l’organisation.</p>
+    </div>
+
+    <h2>📁 Fiches disponibles</h2>
+    <ul class="fiche-list">
+      <li>
+        <div>
+          <a href="fiches/fiche_collabskills.html" target="_blank">🧩 CollabSkills</a>
+          <div class="fiche-meta">Application interne de mise en relation par compétences</div>
+        </div>
+        <a href="fiches/fiche_collabskills.html" class="btn" target="_blank">Voir</a>
+      </li>
+
+      <!-- Exemple d’autres fiches à venir -->
+      <li>
+        <div>
+          <a href="fiches/fiche_gestion_inventaire.html" target="_blank">📦 Gestion d’inventaire</a>
+          <div class="fiche-meta">Application de suivi du matériel informatique</div>
+        </div>
+        <a href="fiches/fiche_gestion_inventaire.html" class="btn" target="_blank">Voir</a>
+      </li>
+
+      <li>
+        <div>
+          <a href="fiches/fiche_support_utilisateurs.html" target="_blank">💬 Support utilisateurs</a>
+          <div class="fiche-meta">Interface de suivi des demandes internes</div>
+        </div>
+        <a href="fiches/fiche_support_utilisateurs.html" class="btn" target="_blank">Voir</a>
+      </li>
     </ul>
-    <p style="margin-top:2em;color:#777;">Cliquez sur une fiche pour la consulter. Vous pouvez l’imprimer ou l’exporter en PDF.</p>
+
+    <footer>
+      © 2025 – Service DEFI, CAF du Lot-et-Garonne | Portefeuille de projets – Claudia Ceccaldi
+    </footer>
   </div>
 </body>
 </html>
