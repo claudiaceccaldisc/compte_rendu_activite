@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fiche - Projet A CAF</title>
+  <title>Fiche – Application Collabskills</title>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
@@ -20,18 +19,94 @@
     </div>
 
     <div id="content">
-      <!-- Ici tu mets ta fiche complète : texte, tableaux, images, code, diagrammes Mermaid -->
-      <h1>💼 Projet : Optimisation des Processus CAF</h1>
-      <h2>Objectif</h2>
-      <p>Améliorer la gestion des tickets dans l’outil interne de la CAF...</p>
+      <h1>💼 Projet : Application <strong>Collabskills</strong></h1>
+      <p><strong>Auteur :</strong> Claudia Ceccaldi – LP DWCA 2024/2025</p>
+      <p><strong>Service :</strong> DEFI – CAF du Var</p>
 
+      <h2>📋 Constat</h2>
+      <p>
+        Avant Collabskills, la constitution d’équipes pour les projets internes se faisait
+        principalement par e-mails ou bouche-à-oreille. Cela engendrait une perte de temps,
+        des doublons et une sous-utilisation des expertises internes.
+      </p>
+
+      <h2>🎯 Objectifs</h2>
+      <ul>
+        <li>Centraliser l’ensemble des compétences internes dans un seul outil</li>
+        <li>Faciliter la mise en relation entre agents et projets</li>
+        <li>Réduire les délais de constitution d’équipe</li>
+        <li>Valoriser les savoir-faire et parcours professionnels internes</li>
+      </ul>
+
+      <h2>🧩 Présentation de l’outil</h2>
+      <p>
+        <strong>Collabskills</strong> est une application web interne de gestion collaborative par compétences.
+        L’outil repose sur un moteur de correspondance automatique entre les profils des agents et les besoins
+        des projets. Son interface est intuitive, responsive et sécurisée.
+      </p>
+
+      <h2>⚙️ Fonctionnalités principales</h2>
+      <ul>
+        <li>Gestion des comptes et rôles utilisateurs (agent / chef de projet / administrateur)</li>
+        <li>Déclaration et modification des compétences via un formulaire interactif</li>
+        <li>Création, suivi et archivage de projets internes</li>
+        <li>Matching automatique entre projets et compétences</li>
+        <li>Tableau de bord personnalisé selon le rôle</li>
+        <li>Recommandations bidirectionnelles (agents ↔ projets)</li>
+      </ul>
+
+      <h3>🧭 Architecture simplifiée</h3>
       <pre class="mermaid">
 graph TD
-  Utilisateur -->|Remplit formulaire| Application
-  Application -->|Enregistre| BaseDeDonnées
-  BaseDeDonnées -->|Renvoie confirmation| Application
-  Application -->|Affiche| Utilisateur
+  A["👤 Utilisateur (Agent / Chef de projet)"] --> B["🌐 Interface Web (React)"]
+  B --> C["🔌 API (Node.js / Express)"]
+  C --> D["🗄️ Base de Données (PostgreSQL)"]
+  C --> E["🤝 Module de Matching (Python + algorithme de similarité)"]
+  E --> D
+  C --> F["🔐 Authentification (JWT / LDAP)"]
+  B --> F
+
+  style A fill:#bbdefb,stroke:#1565c0,stroke-width:2px
+  style B fill:#c8e6c9,stroke:#2e7d32,stroke-width:2px
+  style C fill:#a5d6a7,stroke:#1b5e20,stroke-width:2px
+  style D fill:#fff3e0,stroke:#e65100,stroke-width:2px
+  style E fill:#e1bee7,stroke:#6a1b9a,stroke-width:2px
+  style F fill:#ffcc80,stroke:#ef6c00,stroke-width:2px
       </pre>
+
+      <h2>🚀 Déploiement</h2>
+      <p>
+        Le projet est actuellement en phase de finalisation. L’intégration dans l’infrastructure existante
+        de la CAF est prévue progressivement afin de favoriser l’adoption utilisateur.
+      </p>
+
+      <ul>
+        <li>Phase pilote : tests internes auprès d’un panel d’agents</li>
+        <li>Déploiement progressif par département / service</li>
+        <li>Formation et accompagnement à l’utilisation</li>
+      </ul>
+
+      <h2>📊 Résultats attendus</h2>
+      <ul>
+        <li>Réduction significative du temps d’identification des bons profils</li>
+        <li>Valorisation des compétences internes souvent méconnues</li>
+        <li>Meilleure collaboration interservices</li>
+        <li>Suivi clair et traçabilité des projets transverses</li>
+      </ul>
+
+      <h2>🌱 Perspectives</h2>
+      <ul>
+        <li>Amélioration continue de l’ergonomie et de l’expérience utilisateur</li>
+        <li>Personnalisation des tableaux de bord</li>
+        <li>Extension du moteur de recommandation (IA / NLP)</li>
+        <li>Ajout de fonctionnalités de messagerie interne et notifications</li>
+      </ul>
+
+      <blockquote>
+        <strong>En conclusion :</strong>  
+        Collabskills incarne la volonté de la CAF de valoriser ses talents, fluidifier la
+        collaboration et moderniser la gestion des projets internes.
+      </blockquote>
     </div>
   </div>
 
