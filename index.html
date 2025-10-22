@@ -5,130 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portefeuille de Fiches Projets | CAF du Lot-et-Garonne</title>
 
-  <style>
-    /* === STYLE GLOBAL === */
-    :root {
-      --primary: #005bbb;
-      --secondary: #f1f5f9;
-      --accent: #0069d9;
-      --text-dark: #2c3e50;
-      --text-light: #7f8c8d;
-    }
-
-    body {
-      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-      background: var(--secondary);
-      margin: 0;
-      padding: 30px;
-      color: var(--text-dark);
-    }
-
-    .container {
-      background: #fff;
-      max-width: 900px;
-      margin: auto;
-      border-radius: 12px;
-      padding: 40px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    h1 {
-      color: var(--primary);
-      font-size: 2em;
-      margin-bottom: 5px;
-    }
-
-    h2 {
-      color: var(--text-dark);
-      font-weight: normal;
-      font-size: 1.2em;
-      margin-bottom: 15px;
-    }
-
-    .intro {
-      background: #eef6ff;
-      border-left: 4px solid var(--primary);
-      padding: 15px 20px;
-      border-radius: 6px;
-      margin-bottom: 30px;
-      line-height: 1.6;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 10px 16px;
-      border: none;
-      border-radius: 6px;
-      color: #fff;
-      background: var(--primary);
-      cursor: pointer;
-      font-weight: 600;
-      transition: background 0.2s;
-      text-decoration: none;
-    }
-
-    .btn:hover {
-      background: var(--accent);
-    }
-
-    /* Liste des fiches */
-    .fiche-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .fiche-list li {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-left: 6px solid var(--primary);
-      padding: 15px 20px;
-      margin-bottom: 12px;
-      border-radius: 8px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .fiche-list li:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    }
-
-    .fiche-list a {
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1em;
-    }
-
-    .fiche-list a:hover {
-      text-decoration: underline;
-    }
-
-    .fiche-meta {
-      color: var(--text-light);
-      font-size: 0.9em;
-    }
-
-    footer {
-      margin-top: 40px;
-      text-align: center;
-      font-size: 0.9em;
-      color: var(--text-light);
-    }
-
-    @media (max-width: 600px) {
-      body { padding: 20px; }
-      .container { padding: 25px; }
-    }
-  </style>
+  <!-- Lien vers la feuille de style globale -->
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
 
 <body>
@@ -139,7 +17,7 @@
       <p><strong>Réalisé par :</strong> Claudia Ceccaldi – Mastère Développeur Full Stack</p>
     </header>
 
-    <div class="intro">
+    <div class="highlight">
       <p>Ce portail regroupe l’ensemble des projets réalisés au sein du service <strong>DEFI</strong> de la <strong>CAF du Lot-et-Garonne</strong> dans le cadre du mastère de développement Full Stack.</p>
       <p>Chaque fiche décrit un projet, ses objectifs, les compétences mobilisées et les bénéfices apportés à l’organisation.</p>
     </div>
