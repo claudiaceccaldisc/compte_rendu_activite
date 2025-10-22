@@ -3,49 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio Professionnel – CAF</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Portfolio CAF – Fiches professionnelles</title>
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <header>
-    <h1>📘 Portfolio Professionnel</h1>
-    <p>Mastère Développeur Full Stack – Service DEFI (CAF)</p>
-  </header>
-
-  <main>
-    <h2>📂 Fiches d’actions</h2>
-    <ul class="fiches" id="fiches"></ul>
-
-    <div style="margin-top:2rem;">
-      <button onclick="window.location.href='formulaire.html'">🧾 Créer une nouvelle fiche</button>
-    </div>
-  </main>
-
-  <footer>
-    <p>Service DEFI – CAF | Portfolio professionnel automatisé © 2025</p>
-  </footer>
-
-  <script>
-    async function chargerFiches() {
-      const list = document.getElementById("fiches");
-      const r = await fetch("data/fiches.json");
-      const fiches = await r.json();
-      list.innerHTML = "";
-
-      fiches.forEach(f => {
-        const li = document.createElement("li");
-        li.innerHTML = `
-          <div>
-            <strong>${f.titre}</strong><br>
-            <small>${f.periode} — ${f.type}</small>
-          </div>
-          <div>
-            <a href="${f.lien}" target="_blank">📄 Lire</a>
-          </div>`;
-        list.appendChild(li);
-      });
-    }
-    chargerFiches();
-  </script>
+  <div class="container">
+    <h1>📘 Portfolio Professionnel – CAF</h1>
+    <h2>Liste des Fiches d’Activités</h2>
+    <ul>
+      <li><a href="fiches/fiche1.html">🧩 Fiche 1 – Projet de Modernisation</a></li>
+      <li><a href="fiches/fiche2.html">💡 Fiche 2 – Migration Base de Données</a></li>
+      <li><a href="fiches/fiche3.html">📊 Fiche 3 – Automatisation des Processus</a></li>
+    </ul>
+    <p style="margin-top:2em;color:#777;">Cliquez sur une fiche pour la consulter. Vous pouvez l’imprimer ou l’exporter en PDF.</p>
+  </div>
 </body>
 </html>
